@@ -1,7 +1,7 @@
 export default function Exercicio2({peso,altura})
 {
 
-   let imc= peso/ altura*altura;
+   let imc= Number(peso)/(Number(altura)*(altura));
 
   return(
     <div>
