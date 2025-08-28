@@ -1,7 +1,7 @@
 import {BrowserRouter , Routes, Route} from "react-router-dom";
 import Home from "./Paginas/home";
 import Exemplo1 from "./Paginas/Exemplo1";
-import Exemplo2 from "./Paginas/Exemplo1";
+import Exemplo2 from "./Paginas/Exemplo2";
 import Exercicio1 from "./Paginas/Exercicio1";
 import Exercicio2 from "./Paginas/Exercicio2";
 import Exercicio3 from "./Paginas/Exercicio3";
