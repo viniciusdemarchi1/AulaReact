@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import {useState} from "react"
 
 export default function Exemplo1() {
   const [nome, setNome] = useState("Vinicius");
@@ -42,6 +42,8 @@ export default function Exemplo1() {
           <p>
             <input type="button" value="Exemplo1" onClick={calcular} />
             <input type="button" value="Limpar" onClick={limpar} />
+            </p>
+
             <p>
 
               <b> Resultado</b> <br />
@@ -53,13 +55,13 @@ export default function Exemplo1() {
               {resultado}
             </p>
 
-          </p>
+          
 
 
 
         </form>
           <p>
-            <link to ="/">Voltar</link>
+          <Link to="/">Voltar</Link>
           </p>
 
       </div>
