@@ -18,9 +18,9 @@ export default function Exercicio11() {
         let sn = (n / 2) * (a1 + an);
 
         // Progressão Geométrica
-        let anGeometrica = a1 * r ** (n - 1);
-        let snGeometrica = a1 * (r ** n - 1) / (r - 1);
-        let SIGeometrica = a1 / (1 - r);
+        let anGeometrica = a1 * razao ** (n - 1);
+        let snGeometrica = a1 * (razao ** n - 1) / (razao - 1);
+        let SIGeometrica = a1 / (1 - razao);
 
 
         setResultado(
