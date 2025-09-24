@@ -1,5 +1,5 @@
-import {Link} from "react-router-dom";
-import {useState} from "react";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Exercicio11() {
     const [a1, seta1] = useState(0);
@@ -10,32 +10,54 @@ export default function Exercicio11() {
 
 
     function calcular() {
+        //Progressão Aritimetica
         setRazao(Number(razao));
         setN(Number(n));
         seta1(Number(a1));
         let an = a1 + (n - 1) * razao;
         let sn = (n / 2) * (a1 + an);
 
+        // Progressão Geométrica
+        let anGeometrica = a1 * r ** (n - 1);
+        let snGeometrica = a1 * (r ** n - 1) / (r - 1);
+        let SIGeometrica = a1 / (1 - r);
 
 
         setResultado(
             <div>
-                <p>
-                    Progressao Aritimetica:  <br />
-                    Razao: {razao} <br />
-                    Termo Geral {an}  <br />
-                    soma finita {sn} <br />
-                    soma infinita +-∞
-                </p>
+                <div style={{ color: "red" }}>
+                    <p>
+                        Progressao Aritimetica:  <br />
+                        Razao: {razao} <br />
+                        Termo Geral {an}  <br />
+                        soma finita {sn} <br />
+                        soma infinita +-∞
+
+                    </p>
+                </div>
+                <div style={{ color: "blue" }}>
+                    <p>
+                        Progressao Geometrica:      <br />
+                        Termo Geral {anGeometrica}  <br />
+                        soma finita {snGeometrica} <br />
+                        soma infinita {SIGeometrica} <br />
+                    </p>
+
+
+                </div>
+
+
+
             </div>
+
+
+
 
         );
 
 
 
     }
-
-
 
     return (
         <div>
