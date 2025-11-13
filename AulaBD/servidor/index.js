@@ -55,7 +55,7 @@ app.get("/alunos", (req, res) => {
 
 
 
-app.get("/alunos/codigo", (req, res) => {
+app.get("/alunos/:codigo", (req, res) => {
     const { codigo } = req.params;
     const sql = "SELECT * FROM alunos WHERE codigo = ?";
 
@@ -86,7 +86,7 @@ app.post("/alunos", (req, res) => {
             return res.status(500).json({ error: "Erro ao cadastrar aluno" });
 
         } else {
-            let mensagem = `Alunos ${nome} cadastrado com sucesso com o codigo ${res} `
+            let mensagem = `Aluno ${nome} cadastrado com sucesso com o codigo ${result.insertId}`
             console.log(mensagem);
             return res.status(201).json({ message: mensagem });
 

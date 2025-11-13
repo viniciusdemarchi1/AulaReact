@@ -13,7 +13,7 @@ function consultar() {
 }
 
 function consultarPorCodigo(codigo) {
- fetch(`http://localhost:3001/alunos/${codigo}`)
+    fetch(`http://localhost:3001/alunos/${codigo}`)
         .then(res => res.json())
         .then(data => {
             console.log("Alunos:", data);
@@ -25,13 +25,66 @@ function consultarPorCodigo(codigo) {
 }
 
 function cadastrar() {
+    const aluno = {
+        nome: "Vinicius",
+        cidade: "Mococa",
+        estado: "SP"
+    };
 
+    fetch("http://localhost:3001/alunos", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(aluno)
+
+    })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("resultado").innerHTML = data.message || data.error;
+        })
+        .catch(err => {
+            document.getElementById("resultado").innerHTML = "Erro ao obter dados da API!";
+        });
 }
 
-function alterar() {
+function alterar(codigo) {
+    const alunoAtualizado = {
+
+        nome: "Vinicius Ferrari",
+        cidade: "Belo Horizonte",
+        estado: "MG"
+    };
+
+    fetch(`http://localhost:3001/alunos/${codigo}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(alunoAtualizado)
+    })
+
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("resultado").innerHTML = data.message || data.error;
+        })
+
+        .catch(err => {
+            document.getElementById("resultado").innerHTML = "Erro ao obter dados da API !";
+        });
 
 }
 
 function excluir(codigo) {
+    fetch(`http://localhost:3001/alunos/${codigo}`, {
+        method: "DELETE"
+})
+.then(res => res.json())
+.then(data =>{
+    document.getElementById("resultado").innerHTML = data.message || data.error;
+})
+.catch(err => {
+    document.getElementById("resultado").innerHTML = "Erro ao obter dados da API !";
+});
 
 }
